@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>GuacitUp</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="../static/css/mdb.min.css" rel="stylesheet">
+
+    <!-- Your custom styles (optional) -->
+    <link href="../static/css/style.css" rel="stylesheet">
+
+    <!-- Template styles -->
+    <style>
+        /* TEMPLATE STYLES */
+
+        html,
+        body,
+        .view {
+            height: 100%;
+            width: 100%;
+        }
+        /* Navigation*/
+
+
+        .navbar {
+            background-color: #1C2331;
+        }
+
+        .scrolling-navbar {
+            -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            transition: background .5s ease-in-out, padding .5s ease-in-out;
+        }
+
+        .top-nav-collapse {
+            background-color: #1C2331;
+        }
+
+        footer.page-footer {
+            background-color: #1C2331;
+            margin-top: 2rem;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .navbar {
+                background-color: #1C2331;
+            }
+        }
+        /*Call to action*/
+
+        .flex-center {
+            color: #fff;
+        }
+
+        .view {
+            background: url("http://www.petapixel.com/assets/uploads/2012/11/blackboard-5.jpg")
+            no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        /*Contact section*/
+
+        #contact .fa {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1C2331;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+
+    <!--Navbar-->
+    <nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
+
+        <!-- Collapse button-->
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
+            <i class="fa fa-bars"></i>
+        </button>
+
+        <div class="container">
+
+            <!--Collapse content-->
+            <div class="collapse navbar-toggleable-xs" id="collapseEx">
+                <!--Navbar Brand-->
+                <a class="animated fadeInLeft navbar-brand" style="animation-delay: 1.6s;"href="" target="_blank"><i class="  fa fa-book"></i>  Calc Ku</a>
+                <!--Links-->
+                <ul class="nav navbar-nav">
+                    
+                    <form class="form-inline"  action="/display/" method="post">
+                    <input class="form-control" name="lookup" type="text" placeholder="Search">
+
+                    <button class="nav-link nav-item btn btn-primary btn-sm fadeInDown"  style="display: none;" type="submit" name="search" value="search"></button>
+                </form>
+                
+
+                </ul>
+
+                    <!-- <a href="/profile" style="color: #2BBBAD;" class="nav-link">Signed in as {{session.user}}</a>
+                    <li class="nav-item">
+ -->
+
+            </div>
+            <!--/.Collapse content-->
+
+        </div>
+
+    </nav>
+    <!--/.Navbar-->
+
+
+
+    <!--Mask-->
+    <div class="view hm-black-strong">
+        <div class="full-bg-img flex-center">
+            <ul>
+                <li>
+                    <h1 class="h1-responsive wow fadeInDown" data-wow-delay="0.2s">Let's learn something useful today!</h1></li>
+                <li>
+                    <p class="wow fadeInDown">#1 HW &amp; Announcement Checking App</p>
+                </li>
+                <!-- <li> -->
+                <!--     <br> -->
+                <!--     <a target="_blank" href="https://www.google.com" class="btn btn-default btn-lg wow fadeInRight" data-wow-delay="0.2s">Learn more</a> -->
+                <!-- </li> -->
+            </ul>
+        </div>
+    </div>
+    <!--/.Mask-->
+
+  <div class="container" style="padding-top: 100px; display: inline-block;"> 
+  <div class="row">
+
+            {% for hw in hws %}
+                <!--First columnn-->
+                <div class="col-lg-12">
+                    <!--Card-->
+                    <div class="card wow fadeInUp" style="width: 95vw;">
+                        <!--Card content-->
+                        <div class="card-block text-md-center">
+                            <!--Title-->
+                            <h4 class="card-title"><b style="float: left;text-align: left;">{{hw[0]}}</b> <div style="float: right;text-align: right;font-size: 17px;color: green;">{{hw[1]}}</div> <b style="float: right;text-align: right;font-size: 17px; color: green;">Due: &nbsp;</b></h4><br>
+                            <hr>
+                            <!--Text-->
+                            <p class="card-text" style="text-align: left;">
+                            <b><h5 style="text-align:left;">AIM</h5></b>
+                            {{hw[2]}}</p>
+                            <p class="card-text" style="font-size: 30px; text-align: left;">
+                            <b><h5 style="text-align:left;">HW</h5></b>
+                            <div style="font-size: 30px;font-weight: lighter;">{{hw[3]|safe}}</div></p>
+                            <br><div style="text-align:right;color: steelblue;">Date: {{hw[4]}}</div>                      
+                              </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--/First columnn-->
+            {% endfor %}
+    </div>
+    </div>
+
+
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only">
+
+        <!--Footer Links-->
+
+
+        <!--/.Footer Links-->
+
+        <div class="footer-copyright">
+            <div class="container-fluid">
+                © 2015 Copyright: Shaeq Ahmed
+
+            </div>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+
+
+    <!-- SCRIPTS -->
+
+    <script type="text/javascript" src="../static/js/jquery-3.1.1.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="../static/js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="../static/js/mdb.min.js"></script>
+
+   
+
+    <!-- Animations init-->
+    <script>
+        new WOW().init();
+    </script>
+
+
+</body>
+
+</html>
