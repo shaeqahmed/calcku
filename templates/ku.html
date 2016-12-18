@@ -55,9 +55,10 @@
 
         @media only screen and (max-width: 768px) {
             .navbar {
-                background-color: #1C2331;
+                background-color: #174d00;
             }
         }
+        
         /*Call to action*/
 
         .flex-center {
@@ -146,14 +147,14 @@
     </div>
     <!--/.Mask-->
 
-  <div class="container" style="padding-top: 100px; display: inline-block;"> 
+  <div class="container" style="padding-top: 100px; display: inline-block; width: 100%;"> 
   <div class="row">
 
             {% for hw in hws %}
                 <!--First columnn-->
                 <div class="col-lg-12">
                     <!--Card-->
-                    <div class="card wow fadeInUp" style="width: 95vw;">
+                    <div class="card wow fadeInUp" style="" >
                         <!--Card content-->
                         <div class="card-block text-md-center">
                             <!--Title-->
@@ -165,7 +166,7 @@
                             {{hw[2]}}</p>
                             <p class="card-text" style="font-size: 30px; text-align: left;">
                             <b><h5 style="text-align:left;">HW</h5></b>
-                            <div style="font-size: 30px;font-weight: lighter;">{{hw[3]|safe}}</div></p>
+                            <div class="papa" style="font-size:calc(9px + 2.6vw); font-weight: lighter;">{{hw[3]|safe}}</div></p>
                             <br><div style="text-align:right;color: steelblue;">Date: {{hw[4]}}</div>                      
                               </div>
                         <!--/.Card content-->

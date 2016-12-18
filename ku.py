@@ -20,7 +20,7 @@ def home():
 url = "http://websites.nylearns.org/rku/2016/6/29/405937/page.aspx"  # change to whatever your url is
 
 page = urllib2.urlopen(url).read()
-soup = BeautifulSoup(page, "lxml")
+soup = BeautifulSoup(page, "html5lib")
 hws = []
 table = soup.findAll('table')[1]
 # print table

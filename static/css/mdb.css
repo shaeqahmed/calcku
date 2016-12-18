@@ -7937,6 +7937,9 @@ i.btn-danger {
   .navbar.mobile-nofixed {
     position: relative;
   }
+  .papa {
+    font-size: 1px;
+  }
 }
 
 .navbar.navbar-dark .navbar-brand {
