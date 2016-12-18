@@ -35,7 +35,7 @@
 
 
         .navbar {
-            background-color: #1C2331;
+            background-color: transparent;
         }
 
         .scrolling-navbar {
@@ -98,11 +98,11 @@
         </button>
 
         <div class="container">
-
+                 <a class=" navbar-brand" style="animation-delay: 1.6s;"href="" target="_blank"><i class="  fa fa-book"></i>  Calc Ku</a>
             <!--Collapse content-->
             <div class="collapse navbar-toggleable-xs" id="collapseEx">
                 <!--Navbar Brand-->
-                <a class="animated fadeInLeft navbar-brand" style="animation-delay: 1.6s;"href="" target="_blank"><i class="  fa fa-book"></i>  Calc Ku</a>
+               
                 <!--Links-->
                 <ul class="nav navbar-nav">
                     
@@ -131,7 +131,7 @@
 
     <!--Mask-->
     <div class="view hm-black-strong">
-        <div class="full-bg-img flex-center">
+        <div class="full-bg-img flex-center" >
             <ul>
                 <li>
                     <h1 class="h1-responsive wow fadeInDown" data-wow-delay="0.2s">Let's learn something useful today!</h1></li>
@@ -147,7 +147,9 @@
     </div>
     <!--/.Mask-->
 
-  <div class="container" style="padding-top: 100px; display: inline-block; width: 100%;"> 
+
+
+  <div class="container" style="padding-top: 100px;" > 
   <div class="row">
 
             {% for hw in hws %}
@@ -166,8 +168,12 @@
                             {{hw[2]}}</p>
                             <p class="card-text" style="font-size: 30px; text-align: left;">
                             <b><h5 style="text-align:left;">HW</h5></b>
-                            <div class="papa" style="font-size:calc(9px + 2.6vw); font-weight: lighter;">{{hw[3]|safe}}</div></p>
-                            <br><div style="text-align:right;color: steelblue;">Date: {{hw[4]}}</div>                      
+                            
+<h4 style="font-size:calc(9px + 2.6vw); font-weight: lighter;">{{hw[3]|safe}}</h4><br><br>
+                          
+                                <h5 style="text-align:right;color: steelblue;">Date: {{hw[4]}}</h5>
+                            </p>
+                                                  
                               </div>
                         <!--/.Card content-->
                     </div>
@@ -178,24 +184,6 @@
     </div>
     </div>
 
-
-    <!--Footer-->
-    <footer class="page-footer center-on-small-only">
-
-        <!--Footer Links-->
-
-
-        <!--/.Footer Links-->
-
-        <div class="footer-copyright">
-            <div class="container-fluid">
-                © 2015 Copyright: Shaeq Ahmed
-
-            </div>
-        </div>
-        <!--/.Copyright-->
-
-    </footer>
     <!--/.Footer-->
 
 
